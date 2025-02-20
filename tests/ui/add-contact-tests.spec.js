@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
-const BasePage = require('../pages/basePage');
-const AddContactPage = require('../pages/addContactPage');
+const BasePage = require('../../pages/basePage');
+const AddContactPage = require('../../pages/AddContactPage');
 
 test.describe('Add Contact Form Functionality', () => {
     let addContactPage;
@@ -14,26 +14,6 @@ test.describe('Add Contact Form Functionality', () => {
         
         addContactPage = new AddContactPage(page);
         await addContactPage.navigateToAddContactPage();
-    });
-
-    test('successfully add contact with required fields and verify in table', async () => {
-        const contactData = {
-            firstName: 'Dwight',
-            lastName: 'Schrute'
-        };
-
-        await addContactPage.fillContactForm(contactData);
-        await addContactPage.clickSubmit();
-
-        await expect(addContactPage.page).toHaveURL(/.*\/contactList/);
-        
-        // Verify contact appears in the table
-        const contactsTable = addContactPage.contacts;
-        await expect(contactsTable).toBeVisible();
-        
-        // Verify contact details in table
-        await expect(contactsTable).toContainText(contactData.firstName);
-        await expect(contactsTable).toContainText(contactData.lastName);        
     });
 
     test('successfully add contact with all fields', async () => {

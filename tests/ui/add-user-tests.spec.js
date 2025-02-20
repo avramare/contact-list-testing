@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const AddUserPage  = require("../pages/addUserPage");
+const AddUserPage  = require("../../pages/addUserPage");
 
 test.describe('User Sign Up Functionality', () => {
     let addUserPage;
@@ -9,7 +9,7 @@ test.describe('User Sign Up Functionality', () => {
         await addUserPage.navigateToAddUserPage();
     });
 
-    test('successful user registration with valid data', async ({page}) => {
+    test('successful user registration', async ({page}) => {
         const uniqueEmail = `test${Date.now()}@example.com`;
         await addUserPage.fillSignUpForm(
             'Lord',
@@ -18,8 +18,8 @@ test.describe('User Sign Up Functionality', () => {
             'TomRiddel123!'
         );
         
-        // Verify redirect to contacts page after successful registration
-        await expect(page).toHaveURL("https://thinking-tester-contact-list.herokuapp.com/contactList");
+        // Verify redirect after successful registration
+        await expect(page).toHaveURL("/contactList");
     });
 
     test('validate all form fields are required', async () => {

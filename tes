@@ -1,0 +1,173 @@
+### Test Plan for Contact List Application  
+**Application URL:** https://thinking-tester-contact-list.herokuapp.com/  
+
+---
+
+#### **1. Introduction**  
+This test plan outlines the strategy to validate the functionality, usability, and reliability of the Contact List web application. The focus is on ensuring all core features work as expected for end-users.
+
+---
+
+#### **2. Objectives**  
+- Verify user registration, login, and logout functionality.  
+- Validate CRUD (Create, Read, Update, Delete) operations for contacts.  
+- Ensure UI responsiveness and intuitive navigation.  
+- Confirm proper error handling and validation.  
+
+---
+
+#### **3. Scope**  
+**In-Scope:**  
+- User authentication (signup, login, logout).  
+- Contact management (add, view, edit, delete).  
+- Field validations and error messages.  
+- UI navigation and responsiveness.  
+
+**Out-of-Scope:**  
+- Performance/load testing.  
+- Cross-browser/device compatibility (unless specified). 
+
+---
+
+#### **4. Test Approach**  
+- **Manual Testing:** Execute functional test cases for UI and user workflows.  
+- **API Testing:** Use Postman to validate backend endpoints and test it in Playwright.  
+- **Tools:** Browser DevTools for debugging, Postman,   
+
+---
+
+#### **5. Test Scenarios & Cases**  
+
+**A. User Registration**  
+1. **Valid Registration**  
+   - Input: New email + valid password.  
+   - Expected: Redirect to login/contact list, success message.  
+
+2. **Duplicate Email**  
+   - Input: Existing email.  
+   - Expected: Error: *“Email already exists”*.  
+
+3. **Invalid Email Format**  
+   - Input: `user@invalid` (missing domain).  
+   - Expected: Error: *“Invalid email”*.  
+
+4. **Password Complexity**  
+   - Input: Short password (e.g., “123”).  
+   - Expected: Error enforcing minimum length (if applicable).  
+
+---
+
+**B. User Login/Logout**  
+1. **Valid Credentials**  
+   - Input: Registered email + correct password.  
+   - Expected: Redirect to contact list.  
+
+2. **Invalid Credentials**  
+   - Input: Wrong email/password.  
+   - Expected: Error: *“Incorrect email or password”*.  
+
+3. **Logout**  
+   - Action: Click logout.  
+   - Expected: Session ends, redirect to login.  
+
+---
+
+**C. Contact Management**  
+**Add Contact**  
+1. **Required Fields**  
+   - Input: Fill first name, last name, email.  
+   - Expected: Contact saved and displayed in the list.  
+
+2. **Optional Fields**  
+   - Input: Omit optional fields (e.g., phone).  
+   - Expected: Contact saved without errors.  
+
+3. **Invalid Email/Phone**  
+   - Input: `invalid-email` or `abc-phone`.  
+   - Expected: Validation error.  
+
+**View Contact**  
+1. **Details Accuracy**  
+   - Action: Click on a contact.  
+   - Expected: Displayed data matches input.  
+
+**Edit Contact**  
+1. **Update Fields**  
+   - Action: Edit last name → Save.  
+   - Expected: Updated data reflects in the list.  
+
+2. **Cancel Edit**  
+   - Action: Modify fields → Cancel.  
+   - Expected: Changes discarded.  
+
+**Delete Contact**  
+1. **Delete with Confirmation**  
+   - Action: Delete a contact.  
+   - Expected: Contact removed from the list.  
+
+---
+
+**D. UI/Usability**  
+1. **Navigation**  
+   - Action: Click “Add Contact” → Verify form loads.  
+
+2. **Empty State**  
+   - Test: No contacts → Display “No contacts” message.  
+
+3. **Responsive Design**  
+   - Test: Mobile view renders correctly (e.g., form fields).  
+
+---
+
+**E. Error Handling**  
+1. **Server Errors**  
+   - Simulate API failure (e.g., 500 error).  
+   - Expected: User-friendly error message.  
+
+2. **Session Expiry**  
+   - Action: Stay idle until session expires → Try editing.  
+   - Expected: Redirect to login.  
+
+---
+
+#### **6. Test Data**  
+- **Valid User:** Email: `test@example.com`, Password: `Password123`  
+- **Invalid Emails:** `test@`, `test.com`  
+- **Sample Contact:**  
+  ```  
+  First Name: John  
+  Last Name: Doe  
+  Email: johndoe@test.com  
+  Phone: 123-456-7890  
+  ```  
+
+---
+
+#### **7. Risks & Mitigations**  
+- **Risk:** Heroku server downtime during testing.  
+  **Mitigation:** Schedule tests during stable hours.  
+- **Risk:** Unclear requirements (e.g., password rules).  
+  **Mitigation:** Document assumptions and seek clarifications.  
+
+---
+
+#### **8. Deliverables**  
+- Test cases/results in Excel/TestRail.  
+- Defect report with severity (e.g., login failure = Critical).  
+- Final summary report.  
+
+---
+
+#### **9. Exit Criteria**  
+- All critical test cases pass.  
+- No open defects with severity ≥ Medium.  
+- Product owner approves release.  
+
+---
+
+**Approved By:** [Tester/Manager Name]  
+**Date:** [Date]  
+
+--- 
+
+This plan ensures comprehensive validation of the Contact List app’s core features. Adjust based on exploratory testing findings or additional requirements.

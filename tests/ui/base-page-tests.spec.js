@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const BasePage = require('../pages/basePage');
+const BasePage = require('../../pages/basePage');
 
 test.describe('Base Page Functionality', () => {
     let basePage;

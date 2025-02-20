@@ -41,4 +41,6 @@ class ContactDetailsPage extends ContactListPage {
     async returnToContactList() {
         await this.actions.returnButton.click();
     }
-}    
+}
+
+module.exports = ContactDetailsPage
