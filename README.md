@@ -54,6 +54,10 @@ npx playwright test --browser=webkit
 
 After running tests, you can find the HTML report in the `playwright-report` directory. Open `playwright-report/index.html` in your browser to view detailed test results.
 
+```bash
+npx playwright show-report
+```
+
 ## Smoke Test Suite
 
 The smoke test suite covers the following critical functionality:
