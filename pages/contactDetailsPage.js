@@ -5,9 +5,9 @@ class ContactDetailsPage extends ContactListPage {
         super(page);
         this.page = page;
         this.actions = {
-            editButton : page.locator('#edit-contact'),
-            deleteButton : page.locator('#delete'),
-            returnButton : page.locator('#return')
+            editButton: page.locator('#edit-contact'),
+            deleteButton: page.locator('#delete'),
+            returnButton: page.locator('#return')
         };
         this.details = {
             firstName: page.locator('#firstName'),
