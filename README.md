@@ -50,24 +50,6 @@ npx playwright test --browser=firefox
 npx playwright test --browser=webkit
 ```
 
-## Project Structure
-
-```
-contact-list-tests/
-├── playwright.config.js     # Playwright configuration
-├── package.json            # Project dependencies and scripts
-├── tests/
-│   ├── fixtures/          # Reusable test fixtures
-│   │   └── base-fixtures.js
-│   ├── utils/            # Test utilities and helpers
-│   │   └── test-data.js
-│   ├── smoke/           # Smoke test suites
-│   │   ├── authentication.spec.js
-│   │   └── contacts.spec.js
-│   └── api/            # API test suites
-│       └── contacts.api.spec.js
-```
-
 ## Test Reports
 
 After running tests, you can find the HTML report in the `playwright-report` directory. Open `playwright-report/index.html` in your browser to view detailed test results.
