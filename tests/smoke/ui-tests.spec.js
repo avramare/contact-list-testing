@@ -1,10 +1,9 @@
 const { test, expect } = require("@playwright/test");
 const BasePage = require("../../pages/basePage");
-const ContactDetailsPage = require("../../pages/contactDetailsPage");
 const AddContactPage = require("../../pages/addContactPage");
 const AddUserPage = require("../../pages/addUserPage");
 
-test.describe("Contacts Smoke testss", () => {
+test.describe("Contacts Smoke testss @smoke", () => {
   let basePage;
   let addContactPage;
   let addUserPage;

@@ -49,17 +49,15 @@ This test plan outlines the strategy to validate the functionality, usability, a
 
 ---
 
-#### **7. Risks & Mitigations**  
-- **Risk:** Heroku server downtime during testing.  
-  **Mitigation:** Schedule tests during stable hours.  
-- **Risk:** Unclear requirements (e.g., password rules).  
-  **Mitigation:** Document assumptions and seek clarifications.  
-
----
-
-#### **8. Deliverables**  
+#### **6. Deliverables**  
 - Test cases/results in Excel/TestRail.  
-- Defect report with severity (e.g., login failure = Critical).  
 - Final summary report.  
 
 ---
+
+
+
+**Date:** [Date]  
+
+---
+

@@ -76,10 +76,9 @@ The smoke test suite covers the following critical functionality:
 1. Page Object Model structure for better maintainability
 2. Test data generation using faker.js
 3. Reusable authentication fixtures
-4. Separate configurations for different environments
-5. Comprehensive reporting
-6. API and UI test separation
-7. Clear test organization with smoke test tagging
+4. Detailed reporting
+5. API and UI test separation
+6. Clear test organization with smoke test tagging
 
 ## Contributing
 
